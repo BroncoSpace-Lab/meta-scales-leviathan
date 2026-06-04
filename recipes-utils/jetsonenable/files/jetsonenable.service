@@ -1,0 +1,12 @@
+[Unit]
+Description=Jetson Toggler Program (via screen)
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/screen -DmS jetsonenable /usr/bin/jetsonenable.sh
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
+

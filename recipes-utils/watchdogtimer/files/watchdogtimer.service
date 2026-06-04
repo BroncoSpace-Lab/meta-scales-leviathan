@@ -1,0 +1,12 @@
+[Unit]
+Description=GPIO Watchdog Pinger (via screen)
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/screen -DmS watchdogtimer /usr/bin/watchdogtimer.sh
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
+

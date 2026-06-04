@@ -1,0 +1,21 @@
+[Unit]
+Description=SCALES EPS power monitor (screen session)
+After=network.target local-fs.target
+ConditionPathExists=/usr/bin/eps_piv_telemetry
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/screen -dmS eps_piv_monitor /usr/bin/eps_piv_telemetry
+ExecStop=/usr/bin/screen -S eps_piv_monitor -X quit
+Restart=always
+RestartSec=5
+
+NoNewPrivileges=yes
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectKernelLogs=yes
+ProtectControlGroups=yes
+
+[Install]
+WantedBy=multi-user.target
+

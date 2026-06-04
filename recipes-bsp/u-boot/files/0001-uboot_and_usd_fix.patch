@@ -1,0 +1,47 @@
+From e0081a9b15e2ac1a65f0aad2bd061a3431749862 Mon Sep 17 00:00:00 2001
+From: Luquitolanzi <luquilanzi@gmail.com>
+Date: Wed, 8 Apr 2026 08:08:01 +0000
+Subject: [PATCH] uboot_and_usd_fix
+
+u-boot_uSD_config
+---
+ arch/arm/dts/imx8qxp-phycore-som.dtsi | 3 +++
+ include/configs/phycore_imx8x.h       | 6 +++---
+ 2 files changed, 6 insertions(+), 3 deletions(-)
+
+diff --git a/arch/arm/dts/imx8qxp-phycore-som.dtsi b/arch/arm/dts/imx8qxp-phycore-som.dtsi
+index 5f90503e579..d6204e591a5 100644
+--- a/arch/arm/dts/imx8qxp-phycore-som.dtsi
++++ b/arch/arm/dts/imx8qxp-phycore-som.dtsi
+@@ -213,6 +213,9 @@
+ 	wp-gpios = <&gpio4 21 GPIO_ACTIVE_LOW>;
+ 	vmmc-supply = <&reg_usdhc2_vmmc>;
+ 	no-1-8-v;
++	no-uhs;
++   	no-sd-highspeed;
++    	max-frequency = <25000000>;
+ 	status = "okay";
+ };
+ 
+diff --git a/include/configs/phycore_imx8x.h b/include/configs/phycore_imx8x.h
+index 9b199358933..79fe2b6062b 100644
+--- a/include/configs/phycore_imx8x.h
++++ b/include/configs/phycore_imx8x.h
+@@ -60,11 +60,11 @@
+ 	"cntr_addr=0x98000000\0"			\
+ 	"cntr_file=os_cntr_signed.bin\0" \
+ 	"boot_fdt=try\0" \
+-	"fdt_file=imx8qxp-phytec-pcm-942.dtb\0" \
++	"fdt_file=imx8qxp-scales-leviathan.dtb\0" \
+ 	"bootenv=bootenv.txt\0" \
+ 	"mmc_load_bootenv=fatload mmc ${mmcdev}:${mmcpart} ${bootenv_addr} ${bootenv}\0" \
+-	"ipaddr=192.168.3.11\0" \
+-	"serverip=192.168.3.10\0" \
++	"ipaddr=10.3.2.12\0" \
++	"serverip=10.3.2.11\0" \
+ 	"netmask=255.255.255.0\0" \
+ 	"ip_dyn=no\0" \
+ 	"mmcpart=1\0" \
+-- 
+2.44.1
+

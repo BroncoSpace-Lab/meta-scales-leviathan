@@ -1,0 +1,21 @@
+[Unit]
+Description=SCALES EPS temperature monitor (screen session)
+After=network.target local-fs.target
+ConditionPathExists=/usr/bin/eps_temp_telemetry
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/screen -dmS eps_temp_monitor /usr/bin/eps_temp_telemetry
+ExecStop=/usr/bin/screen -S eps_temp_monitor -X quit
+Restart=always
+RestartSec=5
+
+# Hardening (still safe for I2C)
+NoNewPrivileges=yes
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectKernelLogs=yes
+ProtectControlGroups=yes
+
+[Install]
+WantedBy=multi-user.target

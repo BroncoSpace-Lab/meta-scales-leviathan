@@ -1,0 +1,12 @@
+[Unit]
+Description=Perif Toggler Program (via screen)
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/screen -DmS perifenable /usr/bin/perifenable.sh
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
+
