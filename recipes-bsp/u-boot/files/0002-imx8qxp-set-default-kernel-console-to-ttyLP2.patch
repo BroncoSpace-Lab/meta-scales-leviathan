@@ -1,0 +1,40 @@
+From 43fef7614ef93e6a7bad6c01c612e78282a33cd6 Mon Sep 17 00:00:00 2001
+From: LucaLanzi <luquilanzi@gmail.com>
+Date: Fri, 17 Jul 2026 18:15:15 +0000
+Subject: [PATCH 2/2] imx8qxp: set default kernel console to ttyLP2
+
+---
+ include/configs/phycore_imx8x.h | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/include/configs/phycore_imx8x.h b/include/configs/phycore_imx8x.h
+index 9b199358933..a20991496b1 100644
+--- a/include/configs/phycore_imx8x.h
++++ b/include/configs/phycore_imx8x.h
+@@ -52,7 +52,7 @@
+ 	"script=boot.scr\0" \
+ 	"image=Image\0" \
+ 	"splashimage=0x9e000000\0" \
+-	"console=ttyLP0\0" \
++	"console=ttyLP2\0" \
+ 	"fdt_addr=0x83000000\0"			\
+ 	"fdto_addr=0x83100000\0" \
+ 	"bootenv_addr=0x83200000\0" \
+@@ -60,11 +60,11 @@
+ 	"cntr_addr=0x98000000\0"			\
+ 	"cntr_file=os_cntr_signed.bin\0" \
+ 	"boot_fdt=try\0" \
+-	"fdt_file=imx8qxp-phytec-pcm-942.dtb\0" \
++	"fdt_file=imx8qxp-scales-leviathan.dtb\0" \
+ 	"bootenv=bootenv.txt\0" \
+ 	"mmc_load_bootenv=fatload mmc ${mmcdev}:${mmcpart} ${bootenv_addr} ${bootenv}\0" \
+-	"ipaddr=192.168.3.11\0" \
+-	"serverip=192.168.3.10\0" \
++	"ipaddr=10.3.2.12\0" \
++	"serverip=10.3.2.11\0" \
+ 	"netmask=255.255.255.0\0" \
+ 	"ip_dyn=no\0" \
+ 	"mmcpart=1\0" \
+-- 
+2.44.1
+
