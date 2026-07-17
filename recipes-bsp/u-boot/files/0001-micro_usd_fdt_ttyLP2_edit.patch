@@ -1,13 +1,12 @@
-From e0081a9b15e2ac1a65f0aad2bd061a3431749862 Mon Sep 17 00:00:00 2001
-From: Luquitolanzi <luquilanzi@gmail.com>
-Date: Wed, 8 Apr 2026 08:08:01 +0000
-Subject: [PATCH] uboot_and_usd_fix
+From 7aa9be94db7d7e0fcbfe6313f44e1ba4589599c5 Mon Sep 17 00:00:00 2001
+From: LucaLanzi <luquilanzi@gmail.com>
+Date: Fri, 17 Jul 2026 18:50:38 +0000
+Subject: [PATCH] micro_usd_fdt_ttyLP2_edit
 
-u-boot_uSD_config
 ---
  arch/arm/dts/imx8qxp-phycore-som.dtsi | 3 +++
- include/configs/phycore_imx8x.h       | 6 +++---
- 2 files changed, 6 insertions(+), 3 deletions(-)
+ include/configs/phycore_imx8x.h       | 8 ++++----
+ 2 files changed, 7 insertions(+), 4 deletions(-)
 
 diff --git a/arch/arm/dts/imx8qxp-phycore-som.dtsi b/arch/arm/dts/imx8qxp-phycore-som.dtsi
 index 5f90503e579..d6204e591a5 100644
@@ -24,9 +23,18 @@ index 5f90503e579..d6204e591a5 100644
  };
  
 diff --git a/include/configs/phycore_imx8x.h b/include/configs/phycore_imx8x.h
-index 9b199358933..79fe2b6062b 100644
+index 9b199358933..a20991496b1 100644
 --- a/include/configs/phycore_imx8x.h
 +++ b/include/configs/phycore_imx8x.h
+@@ -52,7 +52,7 @@
+ 	"script=boot.scr\0" \
+ 	"image=Image\0" \
+ 	"splashimage=0x9e000000\0" \
+-	"console=ttyLP0\0" \
++	"console=ttyLP2\0" \
+ 	"fdt_addr=0x83000000\0"			\
+ 	"fdto_addr=0x83100000\0" \
+ 	"bootenv_addr=0x83200000\0" \
 @@ -60,11 +60,11 @@
  	"cntr_addr=0x98000000\0"			\
  	"cntr_file=os_cntr_signed.bin\0" \
