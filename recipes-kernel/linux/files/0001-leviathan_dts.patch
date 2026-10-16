@@ -41,8 +41,8 @@ index 000000000000..0eae93879b91
 +#include <dt-bindings/leds/common.h>
 +
 +/ {
-+    model = "PHYTEC i.MX8QX PCM-942";
-+    compatible = "phytec,imx8qxp-pcm-942", "phytec,imx8qxp-phycore-som", "fsl,imx8qxp";
++    model = "SCALES Leviathan Flight Computer (phyCORE-i.MX8X)";
++    compatible = "scales,imx8qxp-leviathan", "phytec,imx8qxp-phycore-som", "fsl,imx8qxp";
 +
 +    chosen {
 +        bootargs = "console=ttyLP2,115200 earlycon=lpuart32,0x5a080000,115200";
